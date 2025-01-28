@@ -13,7 +13,8 @@ A Flutter package for advanced currency formatting and localization.
 
 Add the following to your `pubspec.yaml` file:
 
-```yaml
+```
+yaml
 dependencies:
   currency_formatter_tools:
     path: ../ 
@@ -66,10 +67,10 @@ Use the `getCurrencySymbol` method to retrieve the currency symbol for a given c
 ```dart
 String currencySymbol = CurrencyFormatterTools.getCurrencySymbol(
   currencyData: [
-    {'crID': 'USD', 'crSymbol': '\$'},
-    {'crID': 'EUR', 'crSymbol': '€'},
+    {'crID': 0, 'crTitle': 'Euro', 'crSymbol': '€'},
+    {'crID': 1, 'crTitle': 'US Dollar', 'crSymbol': '\$'},
   ],
-  currencyID: 'EUR',
+  currencyID: '0', // Use the ID as a string
 );
 ```
 
