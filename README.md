@@ -16,7 +16,7 @@ Add the following to your `pubspec.yaml` file:
 ```yaml
 dependencies:
   currency_formatter_tools:
-    path: ../  # Ensure the path is correct
+    path: ../ 
 ```
 
 Run `flutter pub get` to fetch the dependencies.
@@ -122,10 +122,3 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-```
-
-This `README.md` provides a comprehensive guide on how to use the `currency_formatter_tools` package, including installation, usage, and examples.

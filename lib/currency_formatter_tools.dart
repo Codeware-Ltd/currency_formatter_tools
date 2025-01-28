@@ -61,6 +61,23 @@ class CurrencyFormatterTools {
   }
 
   /// Retrieves the currency symbol for a given currency ID from a list or map.
+  ///
+  /// The `currencyData` parameter can be a list or map containing currency information.
+  /// Each currency entry should have the following structure:
+  /// ```
+  /// {
+  ///   "crID": 0,
+  ///   "crTitle": "Euro",
+  ///   "crSymbol": "\u20ac",
+  /// }
+  /// ```
+  ///
+  /// The `currencyID` parameter is the ID of the currency for which the symbol is to be retrieved.
+  ///
+  /// Returns the currency symbol as a string. If the currency ID is not found, returns an empty string.
+  ///
+  /// Throws an [ArgumentError] if `currencyData` or `currencyID` is not provided.
+
   static String getCurrencySymbol({
     required dynamic currencyData,
     required String currencyID,
