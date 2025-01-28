@@ -1,0 +1,13 @@
+name: currency_formatter_tools_example
+description: A demonstration of the currency_formatter_tools package.
+
+environment:
+  sdk: ">=2.19.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Reference the package via relative path (not in the root `pubspec.yaml`)
+  currency_formatter_tools:
+    path: ../
