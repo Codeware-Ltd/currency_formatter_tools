@@ -1,40 +1,131 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+```markdown
+# Currency Formatter Tools
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package for advanced currency formatting and localization.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Format numeric values as text with customizable decimal places.
+- Format values with currency symbols, separators, and various customization options.
+- Retrieve currency symbols from a list or map of currency data.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the following to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  currency_formatter_tools:
+    path: ../  # Ensure the path is correct
+```
+
+Run `flutter pub get` to fetch the dependencies.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Import the Package
 
 ```dart
-const like = 'sample';
+import 'package:currency_formatter_tools/currency_formatter_tools.dart';
 ```
 
-## Additional information
+### Formatting Numeric Values as Text
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
-# currency_formatter_tools
+Use the `formatAsText` method to format a numeric value as a `Text` widget with specified decimal places and an optional label.
+
+```dart
+Widget formattedText = CurrencyFormatterTools.formatAsText(
+  value: 1234.56,
+  decimalPlaces: 2,
+  label: 'Amount',
+  textStyle: TextStyle(fontSize: 16, color: Colors.black),
+);
+```
+
+### Formatting Values with Currency Symbols
+
+Use the `formatWithCurrency` method to format a value with a currency symbol, separators, and various customization options.
+
+```dart
+Widget formattedCurrency = CurrencyFormatterTools.formatWithCurrency(
+  value: 1234.56,
+  locale: 'en_US',
+  currencySymbol: '\$',
+  useLocaleFormatting: true,
+  symbolOnRight: false,
+  decimalPlaces: 2,
+  label: 'Price',
+  textStyle: TextStyle(fontSize: 16, color: Colors.black),
+);
+```
+
+### Retrieving Currency Symbols
+
+Use the `getCurrencySymbol` method to retrieve the currency symbol for a given currency ID from a list or map of currency data.
+
+```dart
+String currencySymbol = CurrencyFormatterTools.getCurrencySymbol(
+  currencyData: [
+    {'crID': 'USD', 'crSymbol': '\$'},
+    {'crID': 'EUR', 'crSymbol': '€'},
+  ],
+  currencyID: 'EUR',
+);
+```
+
+## Example
+
+Here is a complete example of how to use the `currency_formatter_tools` package in a Flutter application:
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:currency_formatter_tools/currency_formatter_tools.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Currency Formatter Tools')),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CurrencyFormatterTools.formatAsText(
+                value: 1234.56,
+                decimalPlaces: 2,
+                label: 'Amount',
+                textStyle: TextStyle(fontSize: 16, color: Colors.black),
+              ),
+              SizedBox(height: 20),
+              CurrencyFormatterTools.formatWithCurrency(
+                value: 1234.56,
+                locale: 'en_US',
+                currencySymbol: '\$',
+                useLocaleFormatting: true,
+                symbolOnRight: false,
+                decimalPlaces: 2,
+                label: 'Price',
+                textStyle: TextStyle(fontSize: 16, color: Colors.black),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+```
+
+This `README.md` provides a comprehensive guide on how to use the `currency_formatter_tools` package, including installation, usage, and examples.
