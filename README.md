@@ -13,6 +13,7 @@ A Flutter package for advanced currency formatting and localization.
 
 Add the following to your `pubspec.yaml` file:
 
+```
 ```yaml
 dependencies:
   currency_formatter_tools:
