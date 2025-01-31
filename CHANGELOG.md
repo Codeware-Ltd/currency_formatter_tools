@@ -1,4 +1,3 @@
-```markdown
 # Currency Formatter Tools
 
 A Flutter package for advanced currency formatting and localization.
@@ -13,7 +12,6 @@ A Flutter package for advanced currency formatting and localization.
 
 Add the following to your `pubspec.yaml` file:
 
-```
 ```yaml
 dependencies:
   currency_formatter_tools:

@@ -7,6 +7,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> currencies = [
@@ -26,38 +27,72 @@ class MyApp extends StatelessWidget {
         "crSymbol": "\u09F3",
       }
     ];
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.black),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.black54),
+        ),
+      ),
       home: Scaffold(
-        appBar: AppBar(title: const Text('Currency Formatter Tools')),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Displaying a formatted text value
-              CurrencyFormatterTools.formatAsText(
-                value: 1234.56789,
-                label: 'Price',
-                textStyle: const TextStyle(fontSize: 24),
-              ),
-              // Displaying a formatted value with a currency symbol
-              CurrencyFormatterTools.formatWithCurrency(
-                value: 1232344.5212,
-                decimalPlaces: 3,
-                currencySymbol: '\$',
-                label: 'Price',
-                textStyle: const TextStyle(fontSize: 24),
-              ),
-              // Displaying the currency symbol for the given currency ID
-              CurrencyFormatterTools.formatWithCurrency(
-                value: 1000,
-                currencySymbol: CurrencyFormatterTools.getCurrencySymbol(
-                    currencyData: currencies, currencyID: '3'),
-                label: 'Price',
-                symbolOnRight: true,
-                textStyle: const TextStyle(fontSize: 24),
-              ),
-            ],
+        appBar: AppBar(
+          title: const Text('Currency Formatter Tools'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Displaying a formatted text value
+                Card(
+                  elevation: 4,
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: CurrencyFormatterTools.formatAsText(
+                      value: 1234.56789,
+                      label: 'Price',
+                      textStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.red),
+                    ),
+                  ),
+                ),
+                // Displaying a formatted value with a currency symbol
+                Card(
+                  elevation: 4,
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: CurrencyFormatterTools.formatWithCurrency(
+                      value: 1232344.5212,
+                      decimalPlaces: 2,
+                      currencySymbol: '\$',
+                      label: 'Price',
+                      textStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.green),
+                    ),
+                  ),
+                ),
+                // Displaying the currency symbol for the given currency ID
+                Card(
+                  elevation: 4,
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: CurrencyFormatterTools.formatWithCurrency(
+                      value: 1000,
+                      currencySymbol: CurrencyFormatterTools.getCurrencySymbol(
+                          currencyData: currencies, currencyID: '3'),
+                      label: 'Price',
+                      symbolOnRight: true,
+                      textStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.blue),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
