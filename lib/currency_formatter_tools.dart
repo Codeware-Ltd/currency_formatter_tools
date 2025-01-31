@@ -13,7 +13,8 @@ class CurrencyFormatterTools {
     TextStyle? textStyle,
   }) {
     final formattedValue = value.toStringAsFixed(decimalPlaces);
-    final displayText = label != null ? '$label: $formattedValue' : formattedValue;
+    final displayText =
+        label != null ? '$label: $formattedValue' : formattedValue;
 
     return Text(
       displayText,
@@ -42,10 +43,10 @@ class CurrencyFormatterTools {
 
     final formattedValue = useLocaleFormatting
         ? NumberFormat.currency(
-      locale: locale,
-      symbol: '',
-      decimalDigits: decimalPlaces,
-    ).format(value)
+            locale: locale,
+            symbol: '',
+            decimalDigits: decimalPlaces,
+          ).format(value)
         : value.toStringAsFixed(decimalPlaces);
 
     final currencyText = symbolOnRight

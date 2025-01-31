@@ -51,12 +51,12 @@ class MyApp extends StatelessWidget {
               // Displaying the currency symbol for the given currency ID
               CurrencyFormatterTools.formatWithCurrency(
                 value: 1000,
-                currencySymbol: CurrencyFormatterTools.getCurrencySymbol(currencyData: currencies, currencyID: '3'),
+                currencySymbol: CurrencyFormatterTools.getCurrencySymbol(
+                    currencyData: currencies, currencyID: '3'),
                 label: 'Price',
                 symbolOnRight: true,
                 textStyle: const TextStyle(fontSize: 24),
               ),
-
             ],
           ),
         ),

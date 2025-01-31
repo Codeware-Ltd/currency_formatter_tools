@@ -1,7 +1,7 @@
 name: currency_formatter_tools
 description: A Flutter package for advanced currency formatting and localization.
 version: 0.0.1
-homepage: https://github.com/yourusername/currency_formatter_tools
+homepage: https://github.com/Codeware-Ltd/currency_formatter_tools
 environment:
   sdk: ">=2.19.0 <4.0.0"
 
@@ -9,3 +9,8 @@ dependencies:
   flutter:
     sdk: flutter
   intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
