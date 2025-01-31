@@ -16,8 +16,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  currency_formatter_tools:
-    path: ../ 
+  currency_formatter_tools: ^0.0.5
 ```
 
 Run `flutter pub get` to fetch the dependencies.
