@@ -1,4 +1,3 @@
-```markdown
 # Currency Formatter Tools
 
 A Flutter package for advanced currency formatting and localization.
@@ -9,11 +8,12 @@ A Flutter package for advanced currency formatting and localization.
 - Format values with currency symbols, separators, and various customization options.
 - Retrieve currency symbols from a list or map of currency data.
 
+![Currency Formatter Tools](https://github.com/Codeware-Ltd/currency_formatter_tools/blob/main/example/assets/demo_1.jpg)
+
 ## Installation
 
 Add the following to your `pubspec.yaml` file:
 
-```
 ```yaml
 dependencies:
   currency_formatter_tools:
