@@ -8,6 +8,5 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Reference the package via relative path (not in the root `pubspec.yaml`)
   currency_formatter_tools:
     path: ../

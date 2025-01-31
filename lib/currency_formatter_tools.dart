@@ -25,7 +25,7 @@ class CurrencyFormatterTools {
   static Widget formatWithCurrency({
     required dynamic value,
     String locale = 'en_US',
-    String currencySymbol = '\$',
+    String currencySymbol = '',
     bool useLocaleFormatting = true,
     bool symbolOnRight = false,
     int decimalPlaces = 2,
