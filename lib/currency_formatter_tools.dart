@@ -38,6 +38,7 @@ class CurrencyFormatterTools {
     }
 
     if (value is String) {
+      value = value.replaceAll(',', '');
       value = double.tryParse(value) ?? 0.0;
     }
 

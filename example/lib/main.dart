@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: CurrencyFormatterTools.formatWithCurrency(
-                      value: 1232344.5212,
+                      value: "749,000.0",
                       decimalPlaces: 2,
                       currencySymbol: '\$',
                       label: 'Price',
